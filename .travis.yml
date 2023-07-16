@@ -13,14 +13,12 @@ after_success:
   - docker build -t multi-nginx ./ngnix
   - docker build -t multi-server ./server
   - docker build -t multi-worker ./worker
-# properlit tag images
   - docker tag multi-client scyber/complex-project:multi-client
   - docker tag multi-nginx scyber/complex-project:multi-nginx
   - docker tag multi-server scyber/complex-project:multi-server
   - docker tag multi-worker scyber/complex-project:multi-worker
-# Log in to docker
-  - echo "$DOCKER_PASSWORD" | login -u "$DOCKER_ID" --password-stdin
-# Take touse images and push them to docker hub
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
+#
   - docker push scyber/complex-project:multi-client
   - docker push scyber/complex-project:multi-nginx
   - docker push scyber/complex-project:multi-server
