@@ -1,23 +1,11 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import {BrowserRouter as Router, Route, Routes} from 'react-router-dom';
-import reportWebVitals from './reportWebVitals';
-import Fib from './Fib';
-import OtherPage from './OtherPage';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <Router>
-        <Routes>
-             <Route path="/" element={<App />} >
-                <Route index element={<Fib />} />
-                <Route path="/otherPage" element={<OtherPage />}/>
-             </Route>
-        </Routes>
-    </Router>
-);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

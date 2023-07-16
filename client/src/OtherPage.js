@@ -1,15 +1,13 @@
-import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+import React from "react";
+import { Link } from "react-router-dom";
 
-class OtherPage extends Component {
+const OtherPage = () => {
+  return (
+    <div>
+      Im some other page!
+      <Link to="/">Go back home</Link>
+    </div>
+  );
+};
 
-    render(){
-        return (
-            <div>
-                I'm some other page!
-                <Link to="/">Go back Home</Link>
-            </div>
-        );
-    }
-}
 export default OtherPage;

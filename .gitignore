@@ -1,4 +1,4 @@
 ## add ignore files
-./client/node_modules
-./server/node_modules
-./worker/node_modules
+client/node_modules/**
+server/node_modules/**
+worker/node_modules/**
