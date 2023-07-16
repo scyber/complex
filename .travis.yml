@@ -1,0 +1,15 @@
+sudo: required
+services :
+  - docker
+
+before_install: 
+  - docker build -t scyber/complex -f ./client/Dockerfile.dev ./client
+
+script:
+  - docker run -e CI=true scyber/complex npm test  -- --coverage
+
+after_success: 
+  - docker build -t scyber/multi-client ./client
+  - docker build -t scyber/multi-nginx ./ngnix
+  - docker build -t scyber/multi-server ./server
+  - docker build -t scyber/multi-worker ./worker
