@@ -10,7 +10,7 @@ script:
 
 after_success: 
   - docker build -t multi-client ./client
-  - docker build -t multi-nginx ./ngnix
+  - docker build -t multi-nginx ./nginx
   - docker build -t multi-server ./server
   - docker build -t multi-worker ./worker
   - docker tag multi-client scyber/complex-project:multi-client
