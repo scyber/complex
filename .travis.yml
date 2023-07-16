@@ -13,3 +13,13 @@ after_success:
   - docker build -t scyber/multi-nginx ./ngnix
   - docker build -t scyber/multi-server ./server
   - docker build -t scyber/multi-worker ./worker
+# Log in to docker
+  - echo "$DOCKER_PASSWORD" | login -u "$DOCKER_ID" --password-stdin
+# Take touse images and push them to docker hub
+  - docker push scyber/multi-client
+  - docker push scyber/multi-nginx
+  - docker push scyber/multi-server
+  - docker push scyber/multi-worker
+
+
+
