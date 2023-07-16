@@ -16,10 +16,10 @@ after_success:
 # Log in to docker
   - echo "$DOCKER_PASSWORD" | login -u "$DOCKER_ID" --password-stdin
 # Take touse images and push them to docker hub
-  - docker push scyber/complex-project/multi-client
-  - docker push scyber/complex-project/multi-nginx
-  - docker push scyber/complex-project/multi-server
-  - docker push scyber/complex-project/multi-worker
+  - docker push scyber/complex-project:1.0/multi-client
+  - docker push scyber/complex-project:1.0/multi-nginx
+  - docker push scyber/complex-project:1.0/multi-server
+  - docker push scyber/complex-project:1.0/multi-worker
 
 
 
