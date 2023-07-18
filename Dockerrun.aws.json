@@ -1,0 +1,36 @@
+{
+    "AWSEBDockerrunVersion" : 2,
+    "containerDefenitions" : [
+        {
+            "name" : "client",
+            "image": "scyber/complex-project:multi-client",
+            "hostname": "client",
+            "essential" : false
+        },
+        {
+            "name": "server",
+            "image": "",
+            "hostname": "api",
+            "essential": false
+        },
+        {
+            "name": "worker",
+            "image": "scyber/complex-project:multi-worker",
+            "hostname": "worker",
+            "essential": false
+        },
+        {
+            "name": "nginx",
+            "image": "scyber/complex-project:multi-nginx",
+            "hostname": "nginx",
+            "essential": true,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ], 
+            "links" : ["client", "server"]
+        }
+    ]
+}
