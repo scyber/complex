@@ -25,4 +25,19 @@ after_success:
   - docker push scyber/complex-project:multi-worker
 
 
+deploy:
+  provider: elasticbeanstalk
+  region: "us-west-2"
+  app: "copmlex-app"
+  env: "Docker-env"
+  bucket-name: "elastic-us-west-3064766275"
+  bucket_path: "docker"
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: 
+    secure: "$AWS_SECRET_KEY"
+    
+      
+
 
