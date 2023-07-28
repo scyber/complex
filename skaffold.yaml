@@ -8,7 +8,7 @@ build:
   local:
     push: false
   artifacts:
-    - image: rallycoding/client-skaffold
+    - image: scyber/complex-project:multi-client
       context: client
       docker:
         dockerfile: Dockerfile.dev
@@ -20,7 +20,7 @@ build:
             dest: .
           - src: "src/**/*.html"
             dest: .
-    - image: rallycoding/worker-skaffold
+    - image: scyber/complex-project:multi-worker
       context: worker
       docker:
         dockerfile: Dockerfile.dev
@@ -28,7 +28,7 @@ build:
         manual:
           - src: "*.js"
             dest: .
-    - image: rallycoding/server-skaffold
+    - image: scyber/complex-project:multi-server
       context: server
       docker:
         dockerfile: Dockerfile.dev
